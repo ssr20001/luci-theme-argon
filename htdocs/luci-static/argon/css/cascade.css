@@ -7972,7 +7972,7 @@ pre.command-output {
 [data-page="admin-services-passwall"] .cbi-value-field:has(> input[data-update-app]),
 [data-page^="admin-services-passwall-"] .cbi-value-field:has(> input[data-update-app]) {
   display: grid;
-  grid-template-columns: minmax(0, 10rem) auto auto;
+  grid-template-columns: minmax(0, 10rem) max-content max-content minmax(0, 1fr);
   align-items: center;
   justify-content: start;
   gap: var(--control-gap) var(--action-gap);
@@ -8008,16 +8008,12 @@ pre.command-output {
 [data-page^="admin-vpn-passwall-"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"],
 [data-page="admin-services-passwall"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"],
 [data-page^="admin-services-passwall-"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"] {
-  grid-column: 1 / -1;
+  grid-column: 4;
+  grid-row: 1;
   min-width: 0;
+  max-width: 100%;
   line-height: 1.5;
   overflow-wrap: anywhere;
-}
-[data-page="admin-vpn-passwall"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"]:empty,
-[data-page^="admin-vpn-passwall-"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"]:empty,
-[data-page="admin-services-passwall"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"]:empty,
-[data-page^="admin-services-passwall-"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"]:empty {
-  display: none;
 }
 @container (max-width: 40rem) {
   [data-page="admin-vpn-passwall"] .cbi-value-field:has(> input[data-update-app]),
@@ -8044,6 +8040,13 @@ pre.command-output {
   [data-page="admin-services-passwall"] .cbi-value-field:has(> input[data-update-app]) > input[data-update-app][id$="-force_btn"],
   [data-page^="admin-services-passwall-"] .cbi-value-field:has(> input[data-update-app]) > input[data-update-app][id$="-force_btn"] {
     grid-column: 2;
+  }
+  [data-page="admin-vpn-passwall"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"],
+  [data-page^="admin-vpn-passwall-"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"],
+  [data-page="admin-services-passwall"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"],
+  [data-page^="admin-services-passwall-"] .cbi-value-field:has(> input[data-update-app]) > span[id$="-detail"] {
+    grid-column: 1 / -1;
+    grid-row: 3;
   }
   [data-page="admin-vpn-passwall"] .cbi-value:has(> .cbi-value-field > .share-toolbar) > .cbi-value-title,
   [data-page^="admin-vpn-passwall-"] .cbi-value:has(> .cbi-value-field > .share-toolbar) > .cbi-value-title,

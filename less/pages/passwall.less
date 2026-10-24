@@ -198,7 +198,7 @@
     // Match update fields even when a plugin version adds a section wrapper.
     .cbi-value-field:has(> input[data-update-app]) {
         display: grid;
-        grid-template-columns: minmax(0, 10rem) auto auto;
+        grid-template-columns: minmax(0, 10rem) max-content max-content minmax(0, 1fr);
         align-items: center;
         justify-content: start;
         gap: var(--control-gap) var(--action-gap);
@@ -225,16 +225,15 @@
         }
 
         > span[id$="-detail"] {
-            grid-column: 1 / -1;
+            grid-column: 4;
+            grid-row: 1;
             min-width: 0;
+            max-width: 100%;
             line-height: 1.5;
             overflow-wrap: anywhere;
-
-            &:empty {
-                display: none;
-            }
         }
     }
+
 }
 
 @container (max-width: 40rem) {
@@ -257,6 +256,10 @@
                 &[id$="-force_btn"] {
                     grid-column: 2;
                 }
+            }
+            > span[id$="-detail"] {
+                grid-column: 1 / -1;
+                grid-row: 3;
             }
         }
 
